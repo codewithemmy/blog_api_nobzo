@@ -244,6 +244,7 @@ Create a `.env` file using `.env.example`:
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/blog-api
 JWT_SECRET=your_jwt_secret
+TOKEN_EXPIRE_IN=jwt_expiry
 ```
 
 ---
