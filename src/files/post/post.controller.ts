@@ -18,7 +18,7 @@ class PostController {
 
   async fetchPostsController(req: Request, res: Response, next: NextFunction) {
     const [error, data] = await manageAsyncOps(
-      PostService.fetchPostsService(req.query, res.locals.jwt),
+      PostService.fetchPostsService(req.query),
     )
 
     if (error) return next(error)

@@ -32,7 +32,7 @@ export default class PostService {
     }
   }
 
-  static async fetchPostsService(query: Partial<IPost>, user?: any) {
+  static async fetchPostsService(query: Partial<IPost>) {
     const { error, params, limit, skip, sort } = queryConstructor(
       query,
       "createdAt",
@@ -40,15 +40,6 @@ export default class PostService {
     )
 
     if (error) return { success: false, msg: error }
-
-    if (!user) {
-      params.status = "published"
-      params.deletedAt = null
-    }
-
-    if (query.status === "draft") {
-      params.author = user._id
-    }
 
     const posts = await PostRepository.fetchPostsByParams({
       ...params,
