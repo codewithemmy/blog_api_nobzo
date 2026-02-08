@@ -175,10 +175,10 @@ Authorization: Bearer <token>
 POST /api/post
 ```
 
-### Get Public Posts (Published only)
+### Get Public Posts (Published or draft using query params)
 
 ```
-GET /api/post?page=1&limit=10
+GET /api/postt?status=draft&page=1&limit=10
 ```
 
 ### Get Single Published Post
@@ -301,20 +301,3 @@ npm start
   - `package.json`
   - `.env.example`
   - `README.md`
-
-Submit the repository link to:
-
-📧 **[hello@nobzoent.com](mailto:hello@nobzoent.com)**
-
----
-
-## 🏁 Final Notes
-
-This project prioritizes:
-
-- clean API design
-- correctness
-- maintainability
-- clear separation of concerns
-
-Happy coding 🚀
